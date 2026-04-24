@@ -64,7 +64,7 @@ class Barrera {
 
 // EJERCICIOS 
 
-// 1. MUTEX - VENTA ATÓMICA DE BOLETOS
+// Ejercicio 1: El Dilema de la Taquilla (Exclusión Mutua con Mutex) 
 async function ejecutarMutex() {
     const btn = document.getElementById('btn1');
     btn.disabled = true;
@@ -152,7 +152,7 @@ async function ejecutarMutex() {
     btn.disabled = false;
 }
 
-// 2. GIMNASIO
+// Ejercicio 2: El Gimnasio (Semáforos de Conteo) 
 async function ejecutarSemaforos() {
     const btn = document.getElementById('btn2');
     btn.disabled = true;
@@ -186,7 +186,7 @@ async function ejecutarSemaforos() {
     btn.disabled = false;
 }
 
-// 3. PANADERÍA
+// Ejercicio 3: La Vitrina de la Panadería (Productor-Consumidor) 
 async function ejecutarProdCons() {
     const btn = document.getElementById('btn3');
     btn.disabled = true;
@@ -230,7 +230,7 @@ async function ejecutarProdCons() {
     Promise.all([panadero(), cliente()]).then(() => btn.disabled = false);
 }
 
-// 4. LECTORES / ESCRITORES
+// Ejercicio 4: El Tablón de Notas (Lectores-Escritores)
 async function ejecutarLectEsc() {
     const btn = document.getElementById('btn4');
     btn.disabled = true;
@@ -284,7 +284,7 @@ async function ejecutarLectEsc() {
     setTimeout(() => btn.disabled = false, 7000);
 }
 
-// 5. BARRERA
+// Ejercicio 5: El punto de encuentro (Barreras de Sincronización)
 async function ejecutarBarrera() {
     const btn = document.getElementById('btn5');
     btn.disabled = true;
