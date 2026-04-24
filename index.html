@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas Distribuidos - UNL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo-area">
+        <span class="unl-tag"></span>
+        <h1>APE Nro. 003: Arquitectura de Sistemas Distribuidos</h1>
+    </div>
+    <p>Simulador de Mecanismos de Sincronización y Concurrencia</p>
+</header>
+
+<div class="container">
+    <!-- Ejercicio 1: Mutex -->
+    <section class="card" id="card-mutex">
+        <div class="card-header">
+            <span class="icon">🎟️</span>
+            <h2>1. Mutex: La Taquilla</h2>
+            <button class="btn-run" onclick="ejecutarMutex()" id="btn1">Ejecutar</button>
+        </div>
+        
+        <div style="margin: 15px 0; padding: 10px; background: #f0f0f0; border-radius: 5px;">
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+                <div>
+                    <label for="input_hilos" style="font-weight: bold;">Número de Hilos:</label><br>
+                    <input type="number" id="input_hilos" value="5" min="1" max="20" style="width: 80px; padding: 5px; margin-top: 5px;">
+                </div>
+                <div>
+                    <label for="input_ventas" style="font-weight: bold;">Ventas por Hilo:</label><br>
+                    <input type="number" id="input_ventas" value="1000000" min="100" style="width: 150px; padding: 5px; margin-top: 5px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div class="progress" id="prog1" style="width: 0%"></div>
+        </div>
+        <div class="metrics" id="met1">Boletos vendidos: 0 / 5,000,000</div>
+        <div style="margin: 15px 0; background: #f5f5f5; padding: 10px; border-radius: 5px;">
+            <div id="met1_hilos_container">
+                <div id="met1_hilo1" style="margin: 5px 0;">Hilo 1: 0 / 1,000,000</div>
+                <div id="met1_hilo2" style="margin: 5px 0;">Hilo 2: 0 / 1,000,000</div>
+                <div id="met1_hilo3" style="margin: 5px 0;">Hilo 3: 0 / 1,000,000</div>
+                <div id="met1_hilo4" style="margin: 5px 0;">Hilo 4: 0 / 1,000,000</div>
+                <div id="met1_hilo5" style="margin: 5px 0;">Hilo 5: 0 / 1,000,000</div>
+            </div>
+        </div>
+        <div class="terminal" id="term1">Esperando inicio de sesión...</div>
+    </section>
+
+    <!-- Ejercicio 2: Semáforos -->
+    <section class="card" id="card-semaforo">
+        <div class="card-header">
+            <span class="icon">🏋️</span>
+            <h2>2. Semáforos: El Gimnasio</h2>
+            <button class="btn-run" onclick="ejecutarSemaforos()" id="btn2">Ejecutar</button>
+        </div>
+        <div class="machine-grid">
+            <div class="machine" id="m1">M1</div>
+            <div class="machine" id="m2">M2</div>
+            <div class="machine" id="m3">M3</div>
+        </div>
+        <div class="metrics" id="met2">Máquinas en uso: 0 / 3</div>
+        <div class="terminal" id="term2">Esperando atletas...</div>
+    </section>
+
+    <!-- Ejercicio 3: Productor-Consumidor -->
+    <section class="card" id="card-prodcons">
+        <div class="card-header">
+            <span class="icon">🥖</span>
+            <h2>3. Prod-Cons: Panadería</h2>
+            <button class="btn-run" onclick="ejecutarProdCons()" id="btn3">Ejecutar</button>
+        </div>
+        <div class="vitrina-container">
+            <div class="vitrina-visual" id="vitrina-visual">
+                <!-- Se llena dinámicamente -->
+            </div>
+        </div>
+        <div class="metrics" id="met3">Panes en vitrina: 0 / 10</div>
+        <div class="terminal" id="term3">Horno apagado...</div>
+    </section>
+
+    <!-- Ejercicio 4: Lectores-Escritores -->
+    <section class="card" id="card-lectesc">
+        <div class="card-header">
+            <span class="icon">📋</span>
+            <h2>4. Lect-Esc: Tablón</h2>
+            <button class="btn-run" onclick="ejecutarLectEsc()" id="btn4">Ejecutar</button>
+        </div>
+        <div class="access-indicator" id="access-ind">ACCESO LIBRE</div>
+        <div class="metrics" id="met4">Lectores: 0 | Escritor: Inactivo</div>
+        <div class="terminal" id="term4">Tablón vacío...</div>
+    </section>
+
+    <!-- Ejercicio 5: Barrera -->
+    <section class="card" id="card-barrera">
+        <div class="card-header">
+            <span class="icon">🏁</span>
+            <h2>5. Barrera: Encuentro</h2>
+            <button class="btn-run" onclick="ejecutarBarrera()" id="btn5">Ejecutar</button>
+        </div>
+        <div class="thread-sync">
+            <div class="dot" id="dot1"></div>
+            <div class="dot" id="dot2"></div>
+            <div class="dot" id="dot3"></div>
+            <div class="dot" id="dot4"></div>
+            <div class="dot" id="dot5"></div>
+        </div>
+        <div class="metrics" id="met5">Hilos en la barrera: 0 / 5</div>
+        <div class="terminal" id="term5">Sincronización pendiente...</div>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
